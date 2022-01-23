@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenGoButton", "GreenGoButton\GreenGoButton.csproj", "{241728BF-9611-4480-BC14-5597FE156192}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GgbCompiler", "GgbCompiler\GgbCompiler.csproj", "{38067F3C-3695-43DB-9021-DF29BB68E860}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GgbCompilerTests", "GgbCompilerTests\GgbCompilerTests.csproj", "{F87138BD-F396-46A2-9D1A-C6623D60F66E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{241728BF-9611-4480-BC14-5597FE156192}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{241728BF-9611-4480-BC14-5597FE156192}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{241728BF-9611-4480-BC14-5597FE156192}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38067F3C-3695-43DB-9021-DF29BB68E860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38067F3C-3695-43DB-9021-DF29BB68E860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38067F3C-3695-43DB-9021-DF29BB68E860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38067F3C-3695-43DB-9021-DF29BB68E860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F87138BD-F396-46A2-9D1A-C6623D60F66E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F87138BD-F396-46A2-9D1A-C6623D60F66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F87138BD-F396-46A2-9D1A-C6623D60F66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F87138BD-F396-46A2-9D1A-C6623D60F66E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
