@@ -7,6 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBox x:Name="CodeTextBox"
+                 Grid.Row="0"
+                 TextWrapping="Wrap"
+                 AcceptsReturn="True"
+                 VerticalScrollBarVisibility="Visible"/>
+        <Button x:Name="GoButton"
+                Grid.Row="2"
+                Background="DarkGreen"
+                Foreground="AntiqueWhite"
+                Content="Go"
+                Click="GoButton_OnClick"/>
     </Grid>
 </Window>

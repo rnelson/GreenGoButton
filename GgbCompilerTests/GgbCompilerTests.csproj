@@ -18,4 +18,11 @@
     <ProjectReference Include="..\GgbCompiler\GgbCompiler.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="TestSource\HelloWorld.cs" />
+    <Content Include="TestSource\HelloWorld.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

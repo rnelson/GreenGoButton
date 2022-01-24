@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using GgbCompiler;
+using Microsoft.CodeAnalysis;
 
 namespace GreenGoButton
 {
@@ -23,6 +13,22 @@ namespace GreenGoButton
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void GoButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var code = CodeTextBox.Text.Trim();
+            var compiler = new Compiler();
+            compiler.AddCode(code);
+
+            var root = @"C:\temp\ggb";
+            var dir = Path.Combine(root, Path.GetRandomFileName());
+            Directory.CreateDirectory(dir);
+
+            var file = "myapp";
+            var type = OutputKind.ConsoleApplication;
+
+            compiler.Generate(type, dir, file);
         }
     }
 }
