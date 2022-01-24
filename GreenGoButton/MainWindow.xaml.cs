@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using GgbCompiler;
 using Microsoft.CodeAnalysis;
@@ -23,7 +24,20 @@ namespace GreenGoButton
 
         private void GoButton_OnClick(object sender, RoutedEventArgs e)
         {
-            var code = CodeTextBox.Text.Trim();
+            CodeTextBox.IsEnabled = false;
+            GoButton.IsEnabled = false;
+            
+            new Thread(CompileAndRun).Start();
+        }
+
+        private void CompileAndRun()
+        {
+            var code = string.Empty;
+            Dispatcher.Invoke(() =>
+            {
+                code = CodeTextBox.Text.Trim();
+            });
+            
             var compiler = new Compiler();
             compiler.AddCode(code);
 
@@ -44,6 +58,12 @@ namespace GreenGoButton
                 UseShellExecute = true
             };
             Process.Start(proc);
+
+            Dispatcher.Invoke(() =>
+            {
+                CodeTextBox.IsEnabled = true;
+                GoButton.IsEnabled = true;
+            });
         }
     }
 }

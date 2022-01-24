@@ -9,6 +9,26 @@
         Height="450" Width="800"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance local:MainWindowViewModel}">
+    <Window.Resources>
+        <Style x:Key="GoButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="AntiqueWhite"/>
+            <Setter Property="Background" Value="DarkGreen"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#003300"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80*"/>
@@ -24,8 +44,7 @@
                            SyntaxHighlighting="{Binding HighlightingDefinition, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         <Button x:Name="GoButton"
                 Grid.Row="2"
-                Background="DarkGreen"
-                Foreground="AntiqueWhite"
+                Style="{StaticResource GoButtonStyle}"
                 Content="Go"
                 Click="GoButton_OnClick"/>
     </Grid>
