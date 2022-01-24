@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:avalon="clr-namespace:ICSharpCode.AvalonEdit;assembly=ICSharpCode.AvalonEdit"
         xmlns:local="clr-namespace:GreenGoButton"
-        Title="MainWindow"
+        Title="Green Go Button"
         Height="450" Width="800"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance local:MainWindowViewModel}">

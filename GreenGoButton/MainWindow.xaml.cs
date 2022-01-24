@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using GgbCompiler;
@@ -34,6 +35,15 @@ namespace GreenGoButton
             var type = OutputKind.ConsoleApplication;
 
             compiler.Generate(type, dir, file);
+
+            var proc = new ProcessStartInfo
+            {
+                Arguments = $"{file}.exe",
+                WorkingDirectory = dir,
+                FileName = "dotnet",
+                UseShellExecute = true
+            };
+            Process.Start(proc);
         }
     }
 }
