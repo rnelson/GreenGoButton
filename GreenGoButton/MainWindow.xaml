@@ -3,9 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avalon="clr-namespace:ICSharpCode.AvalonEdit;assembly=ICSharpCode.AvalonEdit"
         xmlns:local="clr-namespace:GreenGoButton"
+        Title="MainWindow"
+        Height="450" Width="800"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        d:DataContext="{d:DesignInstance local:MainWindowViewModel}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80*"/>
@@ -13,11 +16,12 @@
             <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
         
-        <TextBox x:Name="CodeTextBox"
-                 Grid.Row="0"
-                 TextWrapping="Wrap"
-                 AcceptsReturn="True"
-                 VerticalScrollBarVisibility="Visible"/>
+        <avalon:TextEditor x:Name="CodeTextBox"
+                           Grid.Row="0"
+                           Background="#3D3D3D"
+                           Foreground="White"
+                           LineNumbersForeground="Black"
+                           SyntaxHighlighting="{Binding HighlightingDefinition, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         <Button x:Name="GoButton"
                 Grid.Row="2"
                 Background="DarkGreen"

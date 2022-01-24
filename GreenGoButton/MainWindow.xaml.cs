@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 using System.Windows;
 using GgbCompiler;
 using Microsoft.CodeAnalysis;
@@ -13,6 +14,10 @@ namespace GreenGoButton
         public MainWindow()
         {
             InitializeComponent();
+
+            var vm = new MainWindowViewModel();
+            vm.HighlightingDefinition = vm.HighlightingDefinitions?.First(d => d.Name == "C#");
+            DataContext = vm;
         }
 
         private void GoButton_OnClick(object sender, RoutedEventArgs e)
